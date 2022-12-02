@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.image{
+  display:flex;
+}
+.home {
+  background-image: url(./images/pic.png);
+  height: 1880px;
+  size: auto;
+  background-size: cover;
+}
+
+.navbar-expand-lg {
+  background-color: lightblue;
+}
+.post-image {
+    size: 20%;
+    border-radius: 16px;
+}
