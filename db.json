@@ -7,8 +7,15 @@
       "categoryId": "0",
       "id": "0", 
       "link": "https://user-images.githubusercontent.com/69875806/205236391-c29de2ad-4b20-40d5-858d-f8bfaf5df74c.png",
-      "imageLink": [
-        "https://user-images.githubusercontent.com/69875806/205236391-c29de2ad-4b20-40d5-858d-f8bfaf5df74c.png"
+      "imageLink": [ 
+        {
+          "caption": "First Image",
+          "icon": "https://user-images.githubusercontent.com/69875806/205236391-c29de2ad-4b20-40d5-858d-f8bfaf5df74c.png"
+        },
+        {
+          "caption": "Second Image",
+          "icon": "https://user-images.githubusercontent.com/69875806/205236445-98a41828-1515-414a-8d58-6968bf483498.png"
+        }
       ]
     },
     {

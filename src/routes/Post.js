@@ -12,7 +12,20 @@ export default function Post() {
   return (
     <div className="post-page">
       <h1>{post.title}</h1>
-      <h4>{post.user.name}</h4>
+      <div>
+        {post.imageLink.map((pic) => {
+          return (
+          <div>
+
+            <img src= {pic.icon} class="rounded float-start" alt="mapping-pics" />
+            <br/>
+        
+          </div>
+          )
+        })}
+       
+      </div>
+      
       <p>{post.body}</p>
 
       <h3>Comments</h3>

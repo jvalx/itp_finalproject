@@ -1,18 +1,24 @@
-import { useLoaderData , Link} from "react-router-dom";
+import { useLoaderData , Link, useNavigate} from "react-router-dom";
 import PostCard from '../PostCard'
 import Modal from "../Modal";
 import { useState } from "react";
 
 
 export default function Index() {
+  const navigate = useNavigate();
   const posts =  useLoaderData();
   console.log("inside of index" + useLoaderData);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const goToContact = () => {
+    // 👇️ navigate to /
+    navigate(`/contact`);
+  
+  };
   return (
     <div className="container">
        
       <h1>Projects</h1>
+      
       <div>
       <button
         variant="primary"
@@ -30,8 +36,8 @@ export default function Index() {
           onClose={() => {
             setIsModalOpen(false);
           }}
-        >
-          <p>Feel free to contact me!</p>
+        > 
+          <button onClick = {goToContact} variant="primary">Feel free to contact me!</button>
         </Modal>
       )}
     </div>
@@ -45,6 +51,9 @@ export default function Index() {
         })}
         
        {/* ${posts[0].id}; */}
+      </div>
+
+      <div id="modal-container">
       </div>
       
     </div>

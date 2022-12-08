@@ -10,8 +10,7 @@ export default function Root() {
     <div className="container">
       <Navigation />
 
-      <div id="modal-container">
-      </div>
+      
 
 
 
