@@ -9,15 +9,21 @@ export default function Contact() {
 
 
 
-  const [firstName, setFirstName] = useState('');
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [note, setNote] = useState('');
   
 
-  const handleFirstNameChange = (event) => {
-    setFirstName(event.target.value);
-  };
+  // const handleFirstNameChange = (event) => {
+  //   console.log("value");
+  //   console.log(event.target.value);
+
+  //   setFirstName(event.target.value);
+  //   console.log(setFirstName(event.target.value));
+  //   console.log("inside set first name: ")
+  //   console.log(firstName);
+  // };
   const handleLastNameChange = (event) => {
     setLastName(event.target.value);
   };
@@ -51,6 +57,7 @@ export default function Contact() {
     }
   };
 
+
   return (
     <div className="container">
   
@@ -62,12 +69,17 @@ export default function Contact() {
              <h6>Leave your information below!</h6>
 
       <div className="col-md-4">
-        <label for="validationCustom01" class="form-label">
+        <label htmlFor="validationCustom01" className="form-label">
           First Name:
           <input
             type="text"
             value={firstName}
-            onChange={handleFirstNameChange}
+            onChange={(updatedFirstName) => {
+              setFirstName(updatedFirstName.nativeEvent.target.value);
+              console.log(updatedFirstName.nativeEvent.target.value);
+              console.log("firstName:");
+              console.log(firstName);
+            }}
           />
         </label>
         <div className="valid-feedback">
@@ -78,7 +90,7 @@ export default function Contact() {
       <br />
 
       <div className="col-md-4">
-        <label for="validationCustom01" class="form-label">
+        <label htmlFor="validationCustom01" className="form-label">
           Last Name:
           <input
             type="text"
@@ -94,7 +106,7 @@ export default function Contact() {
       <br/>
 
       <div className="col-md-4">
-      <label for="validationCustom01" class="form-label">
+      <label htmlFor="validationCustom01" className="form-label">
         Email:
         <input
           type="Email"
@@ -110,7 +122,7 @@ export default function Contact() {
       <br />
 
       <div className="col-md-4">
-      <label for="validationCustom01" class="form-label">
+      <label htmlFor="validationCustom01" className="form-label">
         Note:
         <input
           type="text"
@@ -126,13 +138,13 @@ export default function Contact() {
       
       <input type="submit" value="Submit" />
 
-      <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-              <label class="form-check-label" for="invalidCheck">
+      <div className="col-12">
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
+              <label className="form-check-label" htmlFor="invalidCheck">
                 Agree to terms and conditions
               </label>
-              <div class="invalid-feedback">
+              <div className="invalid-feedback">
                 You must agree before submitting.
               </div>
             </div>
@@ -145,54 +157,7 @@ export default function Contact() {
     </div>
   );
 };
-                
-          // <div class="col-12">
-          //   <div class="form-check">
-          //     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-          //     <label class="form-check-label" for="invalidCheck">
-          //       Agree to terms and conditions
-          //     </label>
-          //     <div class="invalid-feedback">
-          //       You must agree before submitting.
-          //     </div>
-          //   </div>
-          // </div>
-          // <div class="col-12">
-          //   <button class="btn btn-primary" type="submit">Submit form</button>
-          // </div>
-  //       </form>
 
-  //       </div>
-  //     </div>
-
-
-
-          
-      {/* <script>
-      (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-          .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-              if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-              }
-
-              form.classList.add('was-validated')
-            }, false)
-          })
-      })()
-  </script>
-     */}
-      // </div>
-    // );
-  
   
 
 

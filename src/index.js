@@ -21,6 +21,7 @@ import EditPost from "./routes/EditPost";
 import Home from "./routes/Home";
 import PageNotFound from "./routes/PageNotFound";
 import EditComments from "./routes/EditComments";
+import Admin from "./routes/Admin";
 import Comments from "./Comments";
 
 import {
@@ -160,8 +161,14 @@ const router = createBrowserRouter ([
       {
         path: "*",
         element: <PageNotFound />
-
-      }
+      },
+      {
+        path: "/admin",
+        element: <Admin/>,
+        loader() {
+          return fetchPosts();
+        },
+      },
        
        
     ]
