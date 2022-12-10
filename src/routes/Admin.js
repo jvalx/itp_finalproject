@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef,useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CheckList from '../CheckList';
 
@@ -7,11 +7,12 @@ import CheckList from '../CheckList';
 export default function Admin() {
   const [items, setItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
-  const [isIndeterminate, setIsIndeterminate] = useState(false);
+  
   const [isAllSelected, setIsAllSelected] = useState(false);
   const loader = useLoaderData();
   const [titles, setTitles] = useState([]);
-const results = [];
+  const results = [];
+  
   
   
 
@@ -49,36 +50,31 @@ useEffect(() => {
     }
   };
 
-//   const handleDeleteSelected = () => {
-//     // Delete selected items from API
-//     axios.delete('/api/items', { data: { ids: selectedItems } })
-//       .then(() => {
-//         // Remove deleted items from the items array
-//         setItems(items.filter((item) => !selectedItems.includes(item.id)));
 
-//         // Clear the array of selected items
-//         setSelectedItems([]);
 
-//         // Show notification
-//         alert('Items deleted successfully.');
-//       });
-//   };
-
-  useEffect(() => {
-    // Set isIndeterminate state based on whether some but not all items are selected
-    setIsIndeterminate(selectedItems.length > 0 && selectedItems.length < items.length);
-  }, [selectedItems, items]);
+  // useEffect(() => {
+  //   // Set isIndeterminate state based on whether some but not all items are selected
+  //   setIsIndeterminate(selectedItems.length > 0 && selectedItems.length < items.length);
+  // }, [selectedItems, items]);
 
   useEffect(() => {
     // Set isAllSelected state based on whether all items are selected
     setIsAllSelected(selectedItems.length === items.length);
   }, [selectedItems, items]);
 
-  const handleDelete = () => {
+  const handleDelete = (props) => {
     // 👇️ navigate to /
-    console.log(this.props, "inside handle delete");
-  
+    console.log(props, "inside handle delete");
+    console.log(items, "before filer")
+    const newItems = items.filter((item) => item !== props);
+    
+    setItems(newItems);
+    console.log(items, "after filter")
+    console.log(newItems, "new items");
+    alert('Items deleted successfully.');
   };
+
+  
   return (
     // <div>
     //   <h1>Admin Page</h1>
@@ -115,6 +111,7 @@ useEffect(() => {
     // </div>
     <CheckList
       items={items}
+      
       onClick={(newCheckedItem) => {
         console.log("item was clicked", newCheckedItem);
         setItems(newCheckedItem);

@@ -10,7 +10,7 @@ export default function Comments() {
   const buildTimestamp = preval`module.exports = new Date().toLocaleString();`;
   
   const strAscending = [...comments].sort((a, b) =>
-    a.time > b.time ? 1 : -1,
+    a.time < b.time ? 1 : -1,
   );
   console.log(strAscending);
 
@@ -19,7 +19,7 @@ export default function Comments() {
       {strAscending.map((comment) => {
         return (
           <li key={comment.id}>
-            <div>{comment.name} says: </div> 
+            <div>{comment.name} commented at :  {comment.time}</div> 
             <h6>{comment.body}</h6>
               <p></p>
               <Link to={`/comments/${comment.id}/edit`}>

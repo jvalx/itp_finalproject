@@ -1,8 +1,9 @@
 
-import { useState } from "react";
+import { useRef,useEffect,  useState } from "react";
 
 export default function CheckList(props) {
   const [checked, setChecked] = useState([]);
+
 
   // Add/ remove chcked item from list
   const handleCheck = (event) => {
@@ -23,6 +24,7 @@ export default function CheckList(props) {
       })
     : " ";
 
+    
   // Returns classes based on whether items are checked
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not checked-item";

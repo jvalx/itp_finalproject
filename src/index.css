@@ -29,3 +29,9 @@ code {
     size: 20%;
     border-radius: 16px;
 }
+.navbar > li {
+  padding-right: 10px;
+}
+.active {
+  padding-right: 10px;
+}

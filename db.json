@@ -5,9 +5,9 @@
       "body": "MineSweeper Game",
       "userId": "0",
       "categoryId": "0",
-      "id": "0", 
+      "id": "0",
       "link": "https://user-images.githubusercontent.com/69875806/205236391-c29de2ad-4b20-40d5-858d-f8bfaf5df74c.png",
-      "imageLink": [ 
+      "imageLink": [
         {
           "caption": "First Image",
           "icon": "https://user-images.githubusercontent.com/69875806/205236391-c29de2ad-4b20-40d5-858d-f8bfaf5df74c.png"
@@ -24,7 +24,6 @@
       "userId": "1",
       "categoryId": "0",
       "id": "1"
- 
     }
   ],
   "categories": [
@@ -35,11 +34,6 @@
   ],
   "comments": [
     {
-      "body": "idk",
-      "postId": "0",
-      "id": "1"
-    },
-    {
       "body": "ewfqwfqwe",
       "postId": "1",
       "id": "2"
@@ -48,12 +42,6 @@
       "body": "fwewfwe",
       "postId": "1",
       "id": "3"
-    },
-    {
-      "name": "jj",
-      "body": "hi",
-      "postId": "0",
-      "id": "K0eU43U"
     },
     {
       "name": "me",
@@ -68,6 +56,27 @@
       "postId": "0",
       "time": "11/30/2022, 7:23:24 PM",
       "id": "rW2FOXQ"
+    },
+    {
+      "name": "testing",
+      "body": "oll",
+      "postId": "0",
+      "time": "12/8/2022, 1:48:16 AM",
+      "id": "HkvsAaB"
+    },
+    {
+      "name": "test",
+      "body": "time",
+      "postId": "0",
+      "time": "12/8/2022, 1:48:16 AM",
+      "id": "8eUL522"
+    },
+    {
+      "name": "wd",
+      "body": "wd",
+      "postId": "0",
+      "time": "12/8/2022, 1:48:16 AM",
+      "id": "GkFB4kS"
     }
   ],
   "users": [
@@ -81,3 +90,21 @@
     }
   ]
 }
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+  .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+
+  f
