@@ -6,7 +6,7 @@ import Modal from '../Modal';
 
 export default function Root() {
   return (
-    <div className="container">
+    <div id="root" className="container">
       <Navigation />
 
       {/* where we want the dynamic content */}

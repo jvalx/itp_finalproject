@@ -35,3 +35,6 @@ code {
 .active {
   padding-right: 10px;
 }
+.home-title {
+  text-align: justify;
+}

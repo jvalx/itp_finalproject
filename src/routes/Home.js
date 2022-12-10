@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <div className="home">
       <div className="row">
-        <div className="col-2">One of three columns</div>
-        <div className="col-2">One of three columns</div>
+        <div className="col-2"></div>
+        <div className="col-2"></div>
         <div className="col-8">
-          <img alt="Logo"></img>
+        <h1 className= "home-title" style={{ fontSize: '5rem', color: 'black' }}>Juan Valderrama</h1>
         </div>
       </div>
     </div>

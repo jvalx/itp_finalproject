@@ -22,7 +22,7 @@ export default function PostCard(props) {
         <img id="post-image" alt="post-image" src={props.post.link} />
         <Card.Title>{props.post.body}</Card.Title>
         <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
+          {props.post.info}
         </Card.Text>
         <Button onClick={goToPost} variant="primary">
           Check out the project!

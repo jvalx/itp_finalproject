@@ -37,7 +37,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { toast } from 'react-toastify';
 import preval from 'preval.macro';
 
+
 const router = createBrowserRouter([
+ 
   {
     path: '/',
     element: <Root />,
@@ -103,17 +105,12 @@ const router = createBrowserRouter([
         path: '/comments/:id/edit',
         element: <EditComments />,
         loader({ params }) {
-          console.log(params.id, 'params in api');
+          
           return fetchCommentsForPost(params.id);
         },
         action({ request, params }) {
           return request.formData().then((formData) => {
-            console.log('in api edit comments');
-            console.log(params);
-            console.log('comment edit comments');
-            console.log(params.id);
-            console.log('body comments');
-            console.log(formData.get('body'));
+           
             return updateComment(params.id, formData.get('body')).then(
               () => {
                 toast.success('You successfully updated the comment.');
@@ -176,14 +173,12 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     < RouterProvider router={router}/>
-//   </React.StrictMode>
-// );
-const root = createRoot(document.getElementById('root'));
-root.render(<RouterProvider router={router} />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    < RouterProvider router={router}/>
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

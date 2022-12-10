@@ -8,6 +8,7 @@ export default function Post() {
   }, []);
 
   return (
+    <div className ="container">
     <div className="post-page">
       <h1>{post.title}</h1>
       <div>
@@ -25,9 +26,10 @@ export default function Post() {
         })}
       </div>
 
-      <p>{post.body}</p>
+      <h1>{post.body}</h1>
+      <h4>{post.info}</h4>
 
-      <h3>Comments</h3>
+      <h5>Comments</h5>
 
       <ul className="nav nav-tabs mb-3">
         <li className="nav-item">
@@ -43,6 +45,7 @@ export default function Post() {
       </ul>
 
       <Outlet />
+    </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@
     {
       "title": "Project #1",
       "body": "MineSweeper Game",
+      "info": "A logical skill game for everyone. Test how fast you can do it!",
       "userId": "0",
       "categoryId": "0",
       "id": "0",
@@ -20,10 +21,22 @@
     },
     {
       "title": "Project #2",
-      "body": "Updated body",
+      "body": "Trojan Betting Platform",
+      "info": "A betting platform for USC Students!",
       "userId": "1",
       "categoryId": "0",
-      "id": "1"
+      "id": "1",
+      "link": "https://user-images.githubusercontent.com/69875806/206836089-52d8fe09-e41d-4105-a003-4f79704e1b74.png",
+      "imageLink": [
+        {
+          "caption": "First Image",
+          "icon": "https://user-images.githubusercontent.com/69875806/206836089-52d8fe09-e41d-4105-a003-4f79704e1b74.png"
+        },
+        {
+          "caption": "Second Image",
+          "icon": "https://user-images.githubusercontent.com/69875806/206836108-0cf97db9-9a8a-418f-a1a7-5de5eaba2f86.png"
+        }
+      ]
     }
   ],
   "categories": [
@@ -56,34 +69,6 @@
       "postId": "0",
       "time": "11/30/2022, 7:23:24 PM",
       "id": "rW2FOXQ"
-    },
-    {
-      "name": "testing",
-      "body": "oll",
-      "postId": "0",
-      "time": "12/8/2022, 1:48:16 AM",
-      "id": "HkvsAaB"
-    },
-    {
-      "name": "ee",
-      "body": "jkln",
-      "postId": "0",
-      "time": "12/8/2022, 1:48:16 AM",
-      "id": "D3xEgYS"
-    },
-    {
-      "name": "me",
-      "body": "hb jh",
-      "postId": "0",
-      "time": "12/9/2022, 7:46:18 PM",
-      "id": "UyXLjB4"
-    },
-    {
-      "name": "kjhbn",
-      "body": "kjn",
-      "postId": "0",
-      "time": "12/9/2022, 7:48:37 PM",
-      "id": "19orDp1"
     }
   ],
   "users": [
