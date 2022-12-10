@@ -1,30 +1,24 @@
-import React, { useRef,useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CheckList from '../CheckList';
-
-
 
 export default function Admin() {
   const [items, setItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
-  
+
   const [isAllSelected, setIsAllSelected] = useState(false);
   const loader = useLoaderData();
   const [titles, setTitles] = useState([]);
   const results = [];
-  
-  
-  
 
-useEffect(() => {
-    
+  useEffect(() => {
     loader.forEach((post) => {
-        results.push(post.title);
-        console.log(results, "results");
-    })
+      results.push(post.title);
+      console.log(results, 'results');
+    });
     setItems(results);
-    console.log(results, "results");
-    console.log(items, "items");
+    console.log(results, 'results');
+    console.log(items, 'items');
   }, []);
 
   const handleItemSelection = (itemId) => {
@@ -50,8 +44,6 @@ useEffect(() => {
     }
   };
 
-
-
   // useEffect(() => {
   //   // Set isIndeterminate state based on whether some but not all items are selected
   //   setIsIndeterminate(selectedItems.length > 0 && selectedItems.length < items.length);
@@ -64,27 +56,26 @@ useEffect(() => {
 
   const handleDelete = (props) => {
     // 👇️ navigate to /
-    console.log(props, "inside handle delete");
-    console.log(items, "before filer")
+    console.log(props, 'inside handle delete');
+    console.log(items, 'before filer');
     const newItems = items.filter((item) => item !== props);
-    
+
     setItems(newItems);
-    console.log(items, "after filter")
-    console.log(newItems, "new items");
+    console.log(items, 'after filter');
+    console.log(newItems, 'new items');
     alert('Items deleted successfully.');
   };
 
-  
   return (
     // <div>
     //   <h1>Admin Page</h1>
     //   <table>
     //     <thead>
     //       <tr>
-            
+
     //         <div>
     //     {items.map((post) => {
-          
+
     //     //   return <PostCard post={post} key={post.id} src={post.path}/>;
     //         return (
     //         <div>
@@ -96,13 +87,13 @@ useEffect(() => {
     //             onChange={handleSelectAll}
     //           />
     //         </th>
-            
+
     //         <th>{post.title}</th>
     //         </div>
     //         )
-          
+
     //     })}
-        
+
     //    {/* ${posts[0].id}; */}
     //     </div>
     //         </tr>
@@ -111,9 +102,8 @@ useEffect(() => {
     // </div>
     <CheckList
       items={items}
-      
       onClick={(newCheckedItem) => {
-        console.log("item was clicked", newCheckedItem);
+        console.log('item was clicked', newCheckedItem);
         setItems(newCheckedItem);
       }}
       renderList={(handleCheck, isChecked, checkedItems) => {
@@ -139,18 +129,20 @@ useEffect(() => {
             </div>
 
             <div>
-              {"Checked Items: "} {checkedItems}
-              {console.log(checkedItems, "hello")}
+              {'Checked Items: '} {checkedItems}
+              {console.log(checkedItems, 'hello')}
             </div>
             <div>
-              {checkedItems.length > 1 &&
-              <button onClick={() => handleDelete(checkedItems)}> hello </button>
-              
-              }
+              {checkedItems.length > 1 && (
+                <button onClick={() => handleDelete(checkedItems)}>
+                  {' '}
+                  hello{' '}
+                </button>
+              )}
             </div>
           </div>
         );
       }}
     />
-  )
+  );
 }

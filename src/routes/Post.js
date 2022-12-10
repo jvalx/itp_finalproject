@@ -1,12 +1,11 @@
-import { Outlet, useLoaderData, Link } from "react-router-dom";
-import {useEffect} from "react"
+import { Outlet, useLoaderData, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 export default function Post() {
   const post = useLoaderData();
 
- 
   useEffect(() => {
-    document.title = "Project " + post.id;
-}, []);
+    document.title = 'Project ' + post.id;
+  }, []);
 
   return (
     <div className="post-page">
@@ -14,17 +13,18 @@ export default function Post() {
       <div>
         {post.imageLink.map((pic) => {
           return (
-          <div>
-
-            <img src= {pic.icon} class="rounded float-start" alt="mapping-pics" />
-            <br/>
-        
-          </div>
-          )
+            <div>
+              <img
+                src={pic.icon}
+                class="rounded float-start"
+                alt="mapping-pics"
+              />
+              <br />
+            </div>
+          );
         })}
-       
       </div>
-      
+
       <p>{post.body}</p>
 
       <h3>Comments</h3>

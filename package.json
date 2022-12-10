@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
     "preval.macro": "^5.0.0"
   }
 }

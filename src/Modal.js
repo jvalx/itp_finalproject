@@ -1,5 +1,5 @@
-import "./Modal.css";
-import { createPortal } from "react-dom";
+import './Modal.css';
+import { createPortal } from 'react-dom';
 
 export default function Modal(props) {
   return createPortal(
@@ -14,6 +14,6 @@ export default function Modal(props) {
         <div>{props.children}</div>
       </div>
     </>,
-    document.getElementById("modal-container")
+    document.getElementById('modal-container')
   );
 }

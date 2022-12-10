@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom";
+import { Form } from 'react-router-dom';
 
 export default function LeaveComment() {
   return (
@@ -13,8 +13,6 @@ export default function LeaveComment() {
         <label htmlFor="comment-input">Leave a comment here</label>
       </div>
 
-      
-      
       <button type="submit" className="btn btn-primary">
         Submit
       </button>

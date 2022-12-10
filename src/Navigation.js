@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import "./index"
+import { Link } from 'react-router-dom';
+import './index';
 import './index.css';
 
 export default function Navigation() {
   return (
     <nav className="navbar navbar-expand-lg  mb-2">
       <div className="container-fluid">
-        <Link to="/"activeClassName="active">
+        <Link to="/" activeClassName="active">
           Home
         </Link>
         <br></br>

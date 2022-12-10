@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, useLoaderData } from 'react-router-dom';
 
 export default function EditPost() {
   const post = useLoaderData();
