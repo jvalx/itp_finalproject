@@ -1,7 +1,14 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, useLoaderData , useNavigate, Link} from "react-router-dom";
 
 export default function EditComments() {
   const comment = useLoaderData();
+  const navigate = useNavigate();
+ 
+  const handleUpdate = () => {
+    navigate(`/posts`);
+    
+
+  }
 
   return (
     <>
@@ -17,10 +24,13 @@ export default function EditComments() {
             id="body"
             rows="3"
             name="body"
-            defaultValue={comment.body}
+            // defaultValue={comment.body}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button  onClick={handleUpdate} className="btn btn-primary">
+          {/* <Link to={`/posts/${comment.postId}/comments`} className="nav-link">
+            Update
+          </Link> */}
           Update
         </button>
       </Form>

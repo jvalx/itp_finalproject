@@ -4,8 +4,7 @@ import preval from 'preval.macro';
 export default function Comments() {
   const comments = useLoaderData();
   const params = useParams();
-  console.log("params id in comments");
-  console.log(params.id);
+  
   const postId = params.id;
   const buildTimestamp = preval`module.exports = new Date().toLocaleString();`;
   

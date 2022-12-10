@@ -55,7 +55,7 @@ export function deleteComment(commentId) {
 // PATCH /posts/:id, partial update
 export function updateComment(commentID, updatedBody) {
   return fetch(
-    `https://localhost:8000/comments/${commentID}`,
+    `http://localhost:8000/comments/${commentID}`,
     {
       method: "PATCH",
       body: JSON.stringify({

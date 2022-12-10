@@ -3,8 +3,7 @@ import {useEffect} from "react"
 export default function Post() {
   const post = useLoaderData();
 
-  console.log("inside of post; post user.name: ");
-  console.log(post.user.name);
+ 
   useEffect(() => {
     document.title = "Project " + post.id;
 }, []);

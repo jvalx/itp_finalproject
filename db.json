@@ -65,18 +65,11 @@
       "id": "HkvsAaB"
     },
     {
-      "name": "test",
-      "body": "time",
+      "name": "ee",
+      "body": "jkln",
       "postId": "0",
       "time": "12/8/2022, 1:48:16 AM",
-      "id": "8eUL522"
-    },
-    {
-      "name": "wd",
-      "body": "wd",
-      "postId": "0",
-      "time": "12/8/2022, 1:48:16 AM",
-      "id": "GkFB4kS"
+      "id": "D3xEgYS"
     }
   ],
   "users": [
@@ -90,21 +83,3 @@
     }
   ]
 }
-
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
-var forms = document.querySelectorAll('.needs-validation')
-
-// Loop over them and prevent submission
-Array.prototype.slice.call(forms)
-  .forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-
-  f

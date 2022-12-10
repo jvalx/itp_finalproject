@@ -7,6 +7,8 @@ import {
   createBrowserRouter,
   redirect,
   RouterProvider,
+  Link,
+  useNavigate
   
 } from "react-router-dom";
 import {
@@ -31,7 +33,8 @@ import {
   saveComment,
   deleteComment,
   updatePost,
-  updateComment
+  updateComment,
+  fetchComments
 
 } from "./api.js"
 import "bootstrap/dist/css/bootstrap.css";
@@ -97,6 +100,7 @@ const router = createBrowserRouter ([
         path: "/comments/:id/edit",
         element: <EditComments />,
         loader({ params }) {
+          console.log(params.id, "params in api")
           return fetchCommentsForPost(params.id);
         },
         action({ request, params }) {
@@ -114,6 +118,8 @@ const router = createBrowserRouter ([
             ).then(
               () => {
                 toast.success("You successfully updated the comment.");
+               
+
               },
               () => {
                 toast.error("Uh oh!");

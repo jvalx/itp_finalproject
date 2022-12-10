@@ -13,26 +13,36 @@ export default function Contact() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [note, setNote] = useState('');
+
+  const [isLastValid, setLastIsValid] = useState(false);
+  const [isFirstValid, setFirstIsValid] = useState(false);
+  const [isEmailValid, setEmailIsValid] = useState(false);
+  const [isNoteValid, setNoteIsValid] = useState(false);
+
   
 
-  // const handleFirstNameChange = (event) => {
-  //   console.log("value");
-  //   console.log(event.target.value);
 
-  //   setFirstName(event.target.value);
-  //   console.log(setFirstName(event.target.value));
-  //   console.log("inside set first name: ")
-  //   console.log(firstName);
-  // };
+  // FIRST CODE
+  const handleFirstNameChange = (event) => {
+    
+    setFirstIsValid(true);
+    setFirstName(event.target.value);
+   
+    console.log(firstName, "First name changed");
+  };
   const handleLastNameChange = (event) => {
+    setLastIsValid(true);
     setLastName(event.target.value);
+    console.log(lastName, "lastName changed");
   };
 
   const handleEmailChange = (event) => {
+    setEmailIsValid(true);
     setEmail(event.target.value);
   };
 
   const handleNoteChange = (event) => {
+    setNoteIsValid(true);
     setNote(event.target.value);
   };
 
@@ -43,118 +53,84 @@ export default function Contact() {
 
     // Perform form validation here
 
-    if (firstName !== null) {
+    if (!isFirstValid) {
       alert('Error: First name is null .');
     } 
-    if (lastName !== null) {
+    
+    if (!isLastValid) {
       alert('Error: Last name is null .');
     }
-    if (email !== null) {
+    if (!isEmailValid) {
       alert('Error: Email is null .');
     }
-    if (note !== null) {
+    if (!isNoteValid) {
       alert('Error: Note is null .');
+    }
+    if (isFirstValid && isLastValid && isEmailValid && isNoteValid) {
+      setLastName('');
+      setFirstName('');
+      setEmail('');
+      setNote('');
+      alert('Succesfully added you to email list!')
     }
   };
 
 
   return (
-    <div className="container">
-  
-          <div className="row col">
+    
+    
+    
 
-         </div>
-    <form className= "row g-3" onSubmit={handleSubmit}>
-              <h3>Want to contact me?</h3>
-             <h6>Leave your information below!</h6>
-
-      <div className="col-md-4">
-        <label htmlFor="validationCustom01" className="form-label">
-          First Name:
-          <input
-            type="text"
-            value={firstName}
-            onChange={(updatedFirstName) => {
-              setFirstName(updatedFirstName.nativeEvent.target.value);
-              console.log(updatedFirstName.nativeEvent.target.value);
-              console.log("firstName:");
-              console.log(firstName);
-            }}
-          />
-        </label>
-        <div className="valid-feedback">
-                Looks good!
-        </div>
-      </div>
-
-      <br />
-
-      <div className="col-md-4">
-        <label htmlFor="validationCustom01" className="form-label">
-          Last Name:
-          <input
-            type="text"
-            value={lastName}
-            onChange={handleLastNameChange}
-          />
-        </label>
-        <div className="valid-feedback">
-                Looks good!
-        </div>
-      </div>
-
-      <br/>
-
-      <div className="col-md-4">
-      <label htmlFor="validationCustom01" className="form-label">
-        Email:
-        <input
-          type="Email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-      </label>
-      <div className="valid-feedback">
-                Looks good!
-        </div>
-      </div>
-
-      <br />
-
-      <div className="col-md-4">
-      <label htmlFor="validationCustom01" className="form-label">
-        Note:
-        <input
-          type="text"
-          value={note}
-          onChange={handleNoteChange}
-        />
-      </label>
-      <div className="valid-feedback">
-                Looks good!
-        </div>
-      </div>
-      <br />
-      
-      <input type="submit" value="Submit" />
-
-      <div className="col-12">
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-              <label className="form-check-label" htmlFor="invalidCheck">
-                Agree to terms and conditions
-              </label>
-              <div className="invalid-feedback">
-                You must agree before submitting.
-              </div>
-            </div>
-          </div>
-          {/* <div class="col-12">
-            <button class="btn btn-primary" type="submit" value ="Submit">Submit form</button>
-          </div> */}
-     
-    </form>
+    
+    <form class="row g-3 needs-validation"  onSubmit={handleSubmit} novalidate>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationCustom01" value={firstName} onChange={handleFirstNameChange} />
+    <div class="valid-feedback">
+      Looks good!
     </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationCustom02" value={lastName} onChange={handleLastNameChange} />
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Email</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" value={email} onChange={handleEmailChange} />
+      <div class="invalid-feedback">
+        Please choose a email.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom03" class="form-label">Note</label>
+    <input type="text" class="form-control" id="validationCustom03" value={note} onChange={handleNoteChange}/>
+    <div class="invalid-feedback">
+      Please provide a valid note.
+    </div>
+  </div>
+  
+  
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
   );
 };
 
